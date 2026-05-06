@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+    background-color: beige;
+}
+
+body {
+        height: 300vh;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 10px 15px 10px yellow;
+}
+
+.nav {
+    padding: 10px;
+    background-color: red;
+    color: whitesmoke;
+    font-weight: bolder;
+    box-shadow: 10px 20px 15px palevioletred;
+    text-align: center;
+    position: sticky;
+    top: 0px;
+}
+
+.offer {
+    background-color: paleturquoise;
+    border: 3px solid red;
+    box-shadow: 10px 10px 30px red;
+    font-weight: 600px;
+    height: 80px; width: 200px;
+    padding: 20px;
+    text-align: center;
+    /* position: static; */
+    position: absolute;
+    left: 650px;
+}
+
+.parent {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    border: 3px solid black;
+    background-color: coral;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.child {
+    width: 120px;
+    height: 60px;
+    background-color: aqua;
+    border: 3px solid brown;
+    position: absolute;
+    /* left: 110px;
+    top: 100px; */
+}
+
+.chat {
+    background-color: darkblue;
+    padding: 25px;
+    color: white;
+    font-size: 20px;
+    width: 150px;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+}

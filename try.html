@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <title>Semantic Tags Example</title>
+
+  <Style>
+    :root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --accent-color: #38bdf8;
+    --accent-hover: #0ea5e9;
+    --header-bg: rgba(15, 23, 42, 0.8);
+    --border-color: #334155;
+    --mark-bg: rgba(56, 189, 248, 0.2);
+    --mark-text: #38bdf8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-primary);
+    line-height: 1.25;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--header-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+    -webkit-text-fill-color: transparent;
+}
+
+header nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav a {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+header nav a:hover {
+    color: var(--text-primary);
+}
+
+/* Layout */
+main {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Article */
+article h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.meta {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+section p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    color: #cbd5e1;
+}
+
+mark {
+    background: var(--mark-bg);
+    color: var(--mark-text);
+    padding: 0.1em 0.3em;
+    border-radius: 4px;
+}
+
+/* Figure */
+figure {
+    margin: 2rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figcaption {
+    padding: 0.75rem 1rem;
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Details */
+details {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none; /* Hide default triangle in some browsers */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+}
+
+details[open] summary::after {
+    content: '−';
+}
+
+details[open] summary {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.details-content {
+    padding: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Sidebar */
+aside .sidebar-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: sticky;
+    top: 6rem;
+}
+
+aside h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside li {
+    margin-bottom: 0.75rem;
+}
+
+aside li a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    background: rgba(255,255,255,0.02);
+    transition: all 0.2s;
+}
+
+aside li a:hover {
+    background: rgba(255,255,255,0.05);
+    color: var(--accent-color);
+    transform: translateX(4px);
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--text-secondary);
+    margin-top: auto;
+}
+  </Style>
+
+</head>
+
+
+
+<body>
+
+
+
+  <!-- Header -->
+
+  <header>
+
+    <h1>My Blog Website</h1>
+
+    <nav>
+
+      <a href="#">Home</a> |
+
+      <a href="#">Articles</a> |
+
+      <a href="#">Contact</a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- Main Content -->
+
+  <main>
+
+
+
+    <!-- Article -->
+
+    <article>
+
+      <h2>Learning HTML Semantic Tags</h2>
+
+      <p>
+
+        Published on 
+
+        <time datetime="2026-02-06">February 6, 2026</time>
+
+      </p>
+
+
+
+      <section>
+
+        <p>
+
+          Semantic tags make your website <mark>more readable</mark> and SEO friendly.
+
+        </p>
+
+      </section>
+
+
+
+      <!-- Figure with caption -->
+
+      <figure>
+
+        <img src="https://via.placeholder.com/200" alt="Sample Image">
+
+        <figcaption>Fig 1: Example placeholder image</figcaption>
+
+      </figure>
+
+
+
+      <!-- Collapsible details -->
+
+      <details>
+
+        <summary>Read more tips</summary>
+
+        <p>Use header, footer, article, and section to structure your page properly.</p>
+
+      </details>
+
+
+
+    </article>
+
+
+
+    <!-- Sidebar -->
+
+    <aside>
+
+      <h3>Related Links</h3>
+
+      <ul>
+
+        <li><a href="#">HTML Basics</a></li>
+
+        <li><a href="#">CSS Guide</a></li>
+
+      </ul>
+
+    </aside>
+
+
+
+  </main>
+
+
+
+  <!-- Footer -->
+
+  <footer>
+
+    <p>© 2026 My Blog | All rights reserved</p>
+
+  </footer>
+
+
+
+</body>
+
+</html>
+

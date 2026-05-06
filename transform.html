@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform in CSS</title>
+    <link href="/MEDIA/elephant.png" rel="icon" type="image/png">
+    <Style>
+        div {
+            width: 150px;
+            height: 100px;
+            background-color: aqua;
+            border: 2px solid black;
+            text-align: center;
+            padding: 30px;
+            /* transform: translate(50%, 50%); */
+        }
+
+        div:hover {
+            /* transform: scale(2); */
+            /* transform: rotate(-267deg); */
+            /* transform: skew(20deg, 10deg); */
+            transform-origin: bottom right;
+            transform: rotate(45deg);
+        }
+    </Style>
+</head>
+<body>
+    <div> Hello </div>
+</body>
+</html>
